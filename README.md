@@ -61,6 +61,7 @@ $ rm tmp/pids/server.pid
 
 #### - herokuのホストを許可
 config/environments/development.rbに下記を追加
+*エラー出る場合は追加しなくて良い
 ```
 config.hosts << ".herokuapp.com"
 ```
@@ -76,20 +77,26 @@ heroku login
 $ heroku create
 ```
 
-#### - Container Registryにアップロード
-```
-$ heroku container:login
-$ heroku container:push web
-```
-
 #### - add-onの追加
 ```
 $ heroku addons:create heroku-postgresql:hobby-dev
 ```
 
+#### - Container Registryにアップロード
+* 2回目以降のHerokuデプロイは以降のプロセスを行う
+```
+$ heroku container:login
+$ heroku container:push web
+```
+
 #### - リリース
 ```
 $ heroku container:release web
+```
+
+#### - (必要なら)mirtate
+```
+$ heroku run rails db:migrate
 ```
 
 #### - 確認
