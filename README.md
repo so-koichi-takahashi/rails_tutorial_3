@@ -1,7 +1,7 @@
 ## Rails tutorial
 [railsチュートリアル](https://railstutorial.jp/chapters/beginning?version=5.0)
 
-### clone
+### - clone
 任意のディレクトリで実行
 ```
 git clone https://github.com/TakahiroTsuchiya-SO/docker_rails_seed.git
@@ -57,6 +57,12 @@ git remote set-url origin {new url}
 ```
 $ docker-compose down
 $ rm tmp/pids/server.pid
+```
+
+#### - herokuのホストを許可
+config/environments/development.rbに下記を追加
+```
+config.hosts << ".herokuapp.com"
 ```
 
 #### - herokuログイン
