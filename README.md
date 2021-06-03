@@ -7,10 +7,33 @@
 git clone https://github.com/TakahiroTsuchiya-SO/docker_rails.git
 ```
 
+## railsの作成
+### アプリケーションの作成
+```
+$ docker-compose run web rails new . --force --database=postgresql
+```
+
+### databeseとの接続
+config/database.ymlの17行目をまるまる以下に書き換える
+```
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db           # 追記
+  username: postgres # 追記
+  password: password # 追記
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+```
+
 ## docker環境を構築
 ### コンテナをビルド
 ```
 docker-compose build
+```
+
+### データベース作成
+```
+$ docker-compose run web rails db:create
 ```
 
 ### コンテナ立ち上げ
