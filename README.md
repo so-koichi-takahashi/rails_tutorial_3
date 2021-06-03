@@ -4,7 +4,7 @@
 ### clone
 任意のディレクトリで実行
 ```
-git clone https://github.com/TakahiroTsuchiya-SO/docker_rails.git
+git clone https://github.com/TakahiroTsuchiya-SO/docker_rails_seed.git
 ```
 
 ### railsの作成
