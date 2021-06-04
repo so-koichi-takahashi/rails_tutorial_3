@@ -4,7 +4,7 @@
 ### - clone
 任意のディレクトリで実行
 ```
-git clone https://github.com/TakahiroTsuchiya-SO/docker_rails_seed.git
+git clone https://github.com/TakahiroTsuchiya-SO/docker_rails_seed.git {ディレクトリ名*波カッコはずす}
 ```
 
 ### railsの作成
@@ -49,7 +49,7 @@ git init
 
 #### - git remote再設定
 ```
-git remote set-url origin {new url}
+git remote set-url origin {new url*波カッコはずす}
 ```
 
 ### herokuデプロイ
